@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
       await _userCollection.doc(MyApp.userId).get().then((docSnapshot) {
         if (docSnapshot.exists) {
-          MyApp.name = docSnapshot.get(FieldPath(['name']));
+          MyApp.name = docSnapshot.get(FieldPath(const ['name']));
         }
       }).catchError((error) {
         Utils().toastMsg('Error fetching from database'); //Show Toast

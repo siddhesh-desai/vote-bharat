@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../utils/routes.dart';
-import '../widgets/utils.dart';
 
 class LinkSuccessful extends StatelessWidget {
   const LinkSuccessful({super.key});

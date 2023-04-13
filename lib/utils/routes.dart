@@ -6,4 +6,7 @@ class MyRoutes {
   static String linkVoterID = "/link";
   static String linkSuccess = "/linksuccess";
   static String applySuccess = "/applysuccess";
+  static String electionUpdates = "/electionupdates";
+  static String myProfile = "/myprofile";
+  static String voterEducation = "/votereducation";
 }

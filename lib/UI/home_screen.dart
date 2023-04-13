@@ -45,7 +45,9 @@ class _HomeScreenState extends State<HomeScreen> {
           IconButton(
             icon: const Icon(Icons.person_pin),
             tooltip: 'Setting Icon',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, MyRoutes.myProfile);
+            },
           ),
         ],
       ),
@@ -308,43 +310,48 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(16.0),
-                      child: Image(
-                        image: const NetworkImage(
-                          "https://www.oracleglobe.com/wp-content/uploads/2019/09/General-Elections-2019-1019x573.jpg",
-                        ),
-                        height: MediaQuery.of(context).size.height,
-                        width: MediaQuery.of(context).size.width,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(0),
-                      padding: const EdgeInsets.all(0),
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height,
-                      decoration: BoxDecoration(
-                        color: const Color(0x6e000000),
-                        shape: BoxShape.rectangle,
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, MyRoutes.electionUpdates);
+                  },
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      ClipRRect(
                         borderRadius: BorderRadius.circular(16.0),
+                        child: Image(
+                          image: const NetworkImage(
+                            "https://www.oracleglobe.com/wp-content/uploads/2019/09/General-Elections-2019-1019x573.jpg",
+                          ),
+                          height: MediaQuery.of(context).size.height,
+                          width: MediaQuery.of(context).size.width,
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ),
-                    const Text(
-                      "Election Updates",
-                      textAlign: TextAlign.start,
-                      overflow: TextOverflow.clip,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontStyle: FontStyle.normal,
-                        fontSize: 17,
-                        color: Color(0xffffffff),
+                      Container(
+                        margin: const EdgeInsets.all(0),
+                        padding: const EdgeInsets.all(0),
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height,
+                        decoration: BoxDecoration(
+                          color: const Color(0x6e000000),
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
                       ),
-                    ),
-                  ],
+                      const Text(
+                        "Election Updates",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 17,
+                          color: Color(0xffffffff),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 Stack(
                   alignment: Alignment.center,

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:vote_bharat/UI/VoterEducation.dart';
 import 'package:vote_bharat/UI/apply_voter_id.dart';
 import 'package:vote_bharat/UI/auth/register_screen.dart';
 import 'package:vote_bharat/UI/auth/login_screen.dart';
+import 'package:vote_bharat/UI/election_updates.dart';
 import 'package:vote_bharat/UI/link_success.dart';
+import 'package:vote_bharat/UI/my_profile.dart';
 import 'package:vote_bharat/themes/themes.dart';
 import 'package:vote_bharat/utils/routes.dart';
 
@@ -39,7 +42,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       theme: MyTheme.lightTheme(context),
       darkTheme: MyTheme.darkTheme(context),
-      initialRoute: MyRoutes.applySuccess,
+      initialRoute: MyRoutes.homeRoute,
       routes: {
         MyRoutes.loginRoute: (context) => const LoginScreen(),
         MyRoutes.registerRoute: (context) => const RegisterScreen(),
@@ -48,6 +51,9 @@ class _MyAppState extends State<MyApp> {
         MyRoutes.linkVoterID: (context) => const LinkVoterID(),
         MyRoutes.linkSuccess: (context) => const LinkSuccessful(),
         MyRoutes.applySuccess: (context) => const ApplySuccessful(),
+        MyRoutes.electionUpdates: (context) => const ElectionUpdates(),
+        MyRoutes.myProfile: (context) => const MyProfile(),
+        MyRoutes.voterEducation: (context) => VoterEducation(),
       },
     );
   }

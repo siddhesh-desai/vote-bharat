@@ -15,34 +15,39 @@ class _MyDrawerState extends State<MyDrawer> {
     return Drawer(
       child: ListView(
         children: [
-          DrawerHeader(
-            padding: EdgeInsets.zero,
-            child: UserAccountsDrawerHeader(
-              margin: EdgeInsets.zero,
-              decoration: const BoxDecoration(
-                color: Color(0xffea6e17),
-              ),
-              accountEmail: Text(
-                MyApp.email,
-                // "siddheshdesai@gmail.com",
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, MyRoutes.myProfile);
+            },
+            child: DrawerHeader(
+              padding: EdgeInsets.zero,
+              child: UserAccountsDrawerHeader(
+                margin: EdgeInsets.zero,
+                decoration: const BoxDecoration(
+                  color: Color(0xffea6e17),
                 ),
-              ),
-              accountName: Text(
-                MyApp.name,
-                // "Siddhesh Desai",
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 17,
-                  color: Colors.white,
+                accountEmail: Text(
+                  MyApp.email,
+                  // "siddheshdesai@gmail.com",
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 15,
+                  ),
                 ),
-              ),
-              currentAccountPicture: const Icon(
-                Icons.account_circle,
-                color: Colors.white,
-                size: 80,
+                accountName: Text(
+                  MyApp.name,
+                  // "Siddhesh Desai",
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 17,
+                    color: Colors.white,
+                  ),
+                ),
+                currentAccountPicture: const Icon(
+                  Icons.account_circle,
+                  color: Colors.white,
+                  size: 80,
+                ),
               ),
             ),
           ),
@@ -87,7 +92,7 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           ListTile(
             onTap: () {
-              // Navigator.pushNamed(context, MyRoutes.aboutRoute);
+              Navigator.pushNamed(context, MyRoutes.electionUpdates);
             },
             leading: const Icon(
               Icons.update,

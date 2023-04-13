@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vote_bharat/utils/routes.dart';
 
 class ApplyVoterID extends StatelessWidget {
   const ApplyVoterID({super.key});
@@ -311,7 +312,9 @@ class ApplyVoterID extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 25, 0, 0),
                   child: MaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, MyRoutes.applySuccess);
+                    },
                     color: const Color(0xff128807),
                     elevation: 10,
                     shape: RoundedRectangleBorder(

@@ -70,6 +70,12 @@ flutter:
     - assets/images/banner02.jpg
     - assets/images/refer_banner.png
     - assets/images/apply_banner.png
+    - assets/images/dollar.png
+    - assets/images/rupee.png
+    - assets/images/whatsapp.png
+    - assets/images/facebook.png
+    - assets/images/twitter.png
+    - assets/images/instagram.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

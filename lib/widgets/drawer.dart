@@ -110,6 +110,7 @@ class _MyDrawerState extends State<MyDrawer> {
           ListTile(
             onTap: () {
               // Navigator.pushNamed(context, MyRoutes.profileRoute);
+              Navigator.pushNamed(context, MyRoutes.voterEducation);
             },
             leading: const Icon(
               Icons.cast_for_education,

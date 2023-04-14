@@ -353,45 +353,47 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(16.0),
-                      child:
-
-                          ///***If you have exported images you must have to copy those images in assets/images directory.
-                          Image(
-                        image: const NetworkImage(
-                            "https://th.bing.com/th/id/OIP.qWGveec8M82rItJpxVKuXwAAAA?pid=ImgDet&rs=1"),
-                        height: MediaQuery.of(context).size.height,
-                        width: MediaQuery.of(context).size.width,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(0),
-                      padding: const EdgeInsets.all(0),
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height,
-                      decoration: BoxDecoration(
-                        color: const Color(0x6e000000),
-                        shape: BoxShape.rectangle,
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, MyRoutes.voterEducation);
+                  },
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      ClipRRect(
                         borderRadius: BorderRadius.circular(16.0),
+                        child: Image(
+                          image: const NetworkImage(
+                              "https://th.bing.com/th/id/OIP.qWGveec8M82rItJpxVKuXwAAAA?pid=ImgDet&rs=1"),
+                          height: MediaQuery.of(context).size.height,
+                          width: MediaQuery.of(context).size.width,
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ),
-                    const Text(
-                      "Education",
-                      textAlign: TextAlign.start,
-                      overflow: TextOverflow.clip,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontStyle: FontStyle.normal,
-                        fontSize: 16,
-                        color: Color(0xffffffff),
+                      Container(
+                        margin: const EdgeInsets.all(0),
+                        padding: const EdgeInsets.all(0),
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height,
+                        decoration: BoxDecoration(
+                          color: const Color(0x6e000000),
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
                       ),
-                    ),
-                  ],
+                      const Text(
+                        "Education",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 16,
+                          color: Color(0xffffffff),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 Stack(
                   alignment: Alignment.center,
@@ -530,18 +532,23 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            Container(
-              margin: const EdgeInsets.fromLTRB(16, 0, 0, 20),
-              padding: const EdgeInsets.all(8),
-              width: 330,
-              height: 150,
-              decoration: BoxDecoration(
-                image: const DecorationImage(
-                  image: AssetImage('assets/images/refer_banner.png'),
-                  fit: BoxFit.cover,
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, MyRoutes.referalRoute);
+              },
+              child: Container(
+                margin: const EdgeInsets.fromLTRB(16, 0, 0, 20),
+                padding: const EdgeInsets.all(8),
+                width: 330,
+                height: 150,
+                decoration: BoxDecoration(
+                  image: const DecorationImage(
+                    image: AssetImage('assets/images/refer_banner.png'),
+                    fit: BoxFit.cover,
+                  ),
+                  shape: BoxShape.rectangle,
+                  borderRadius: BorderRadius.circular(16.0),
                 ),
-                shape: BoxShape.rectangle,
-                borderRadius: BorderRadius.circular(16.0),
               ),
             ),
           ],

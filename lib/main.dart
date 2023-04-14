@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:vote_bharat/UI/referal_screen.dart';
-import 'package:vote_bharat/UI/voter_educartion.dart';
+import 'package:vote_bharat/UI/voter_education.dart';
 import 'package:vote_bharat/UI/apply_voter_id.dart';
 import 'package:vote_bharat/UI/auth/register_screen.dart';
 import 'package:vote_bharat/UI/auth/login_screen.dart';
@@ -10,7 +10,7 @@ import 'package:vote_bharat/UI/link_success.dart';
 import 'package:vote_bharat/UI/my_profile.dart';
 import 'package:vote_bharat/themes/themes.dart';
 import 'package:vote_bharat/utils/routes.dart';
-import 'UI/SocialNetworkScreen.dart';
+import 'UI/social_network.dart';
 import 'UI/apply_success.dart';
 import 'UI/candidates_screen.dart';
 import 'UI/home_screen.dart';
@@ -55,9 +55,9 @@ class _MyAppState extends State<MyApp> {
         MyRoutes.applySuccess: (context) => const ApplySuccessful(),
         MyRoutes.electionUpdates: (context) => const ElectionUpdates(),
         MyRoutes.myProfile: (context) => const MyProfile(),
-        MyRoutes.voterEducation: (context) => VoterEducation(),
+        MyRoutes.voterEducation: (context) => const VoterEducation(),
         MyRoutes.referalRoute: (context) => const ReferalScreen(),
-        MyRoutes.socialNetworkRoute: (context) => SocialNetworkScreen(),
+        MyRoutes.socialNetworkRoute: (context) => const SocialMedia(),
         MyRoutes.candidatesRoute: (context) => const CandidateScreen(),
       },
     );

@@ -273,42 +273,47 @@ class _HomeScreenState extends State<HomeScreen> {
                 childAspectRatio: 1,
               ),
               children: [
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(16.0),
-                      child: Image(
-                        image: const NetworkImage(
-                            "https://www.boell.de/sites/default/files/styles/var_larger/public/uploads/2014/04/indien-wahlen-aussenpolitik_0.jpg?itok=99bSUsQJ"),
-                        height: MediaQuery.of(context).size.height,
-                        width: MediaQuery.of(context).size.width,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(0),
-                      padding: const EdgeInsets.all(0),
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height,
-                      decoration: BoxDecoration(
-                        color: const Color(0x6e000000),
-                        shape: BoxShape.rectangle,
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, MyRoutes.socialNetworkRoute);
+                  },
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      ClipRRect(
                         borderRadius: BorderRadius.circular(16.0),
+                        child: Image(
+                          image: const NetworkImage(
+                              "https://www.boell.de/sites/default/files/styles/var_larger/public/uploads/2014/04/indien-wahlen-aussenpolitik_0.jpg?itok=99bSUsQJ"),
+                          height: MediaQuery.of(context).size.height,
+                          width: MediaQuery.of(context).size.width,
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ),
-                    const Text(
-                      "Social Network",
-                      textAlign: TextAlign.start,
-                      overflow: TextOverflow.clip,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontStyle: FontStyle.normal,
-                        fontSize: 18,
-                        color: Color(0xffffffff),
+                      Container(
+                        margin: const EdgeInsets.all(0),
+                        padding: const EdgeInsets.all(0),
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height,
+                        decoration: BoxDecoration(
+                          color: const Color(0x6e000000),
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
                       ),
-                    ),
-                  ],
+                      const Text(
+                        "Social Network",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 18,
+                          color: Color(0xffffffff),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 InkWell(
                   onTap: () {

@@ -72,10 +72,10 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           ListTile(
             onTap: () {
-              setState(() {
-                MyApp.sectionNow = 2;
-              });
-              // Navigator.pushNamed(context, MyRoutes.profileRoute);
+              // setState(() {
+              //   MyApp.sectionNow = 2;
+              // });
+              Navigator.pushNamed(context, MyRoutes.socialNetworkRoute);
             },
             leading: const Icon(
               Icons.people_alt,

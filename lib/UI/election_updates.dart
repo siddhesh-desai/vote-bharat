@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../utils/routes.dart';
+
 class ElectionUpdates extends StatelessWidget {
   const ElectionUpdates({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfff5f5f5),
+      backgroundColor: const Color(0xfff5f5f5),
       appBar: AppBar(
         elevation: 4,
         centerTitle: true,
@@ -41,7 +43,93 @@ class ElectionUpdates extends StatelessWidget {
             child: Card(
               margin: const EdgeInsets.all(4),
               // color: Colors.white,
-              color: Color.fromARGB(255, 255, 197, 121),
+              color: const Color.fromARGB(255, 255, 197, 121),
+              shadowColor: const Color(0xff000000),
+              elevation: 4,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(12.0),
+                          child: Image(
+                            image: const NetworkImage(
+                                "https://www.pinkcitypost.com/wp-content/uploads/2018/01/list-of-by-election-candidates-Rajasthan-BJP-Congress.jpg"),
+                            height: 140,
+                            width: MediaQuery.of(context).size.width,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                          child: Text(
+                            "Get to know your Candidates!",
+                            textAlign: TextAlign.center,
+                            overflow: TextOverflow.clip,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontStyle: FontStyle.normal,
+                              fontSize: 18,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, MyRoutes.candidatesRoute);
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      margin: const EdgeInsets.all(0),
+                      padding: const EdgeInsets.all(0),
+                      width: MediaQuery.of(context).size.width,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 8, 152, 83),
+                        shape: BoxShape.rectangle,
+                        borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(12.0),
+                            bottomRight: Radius.circular(12.0)),
+                        border: Border.all(
+                            color: const Color(0x4d9e9e9e), width: 1),
+                      ),
+                      child: const Text(
+                        "View Candidates",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 18,
+                          color: Color(0xffffffff),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0, 8, 0, 8),
+            child: Card(
+              margin: const EdgeInsets.all(4),
+              // color: Colors.white,
+              color: const Color.fromARGB(255, 255, 197, 121),
               shadowColor: const Color(0xff000000),
               elevation: 4,
               shape: RoundedRectangleBorder(
@@ -86,30 +174,35 @@ class ElectionUpdates extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Container(
-                    alignment: Alignment.center,
-                    margin: const EdgeInsets.all(0),
-                    padding: const EdgeInsets.all(0),
-                    width: MediaQuery.of(context).size.width,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 8, 152, 83),
-                      shape: BoxShape.rectangle,
-                      borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(12.0),
-                          bottomRight: Radius.circular(12.0)),
-                      border:
-                          Border.all(color: const Color(0x4d9e9e9e), width: 1),
-                    ),
-                    child: const Text(
-                      "Read this Article",
-                      textAlign: TextAlign.start,
-                      overflow: TextOverflow.clip,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontStyle: FontStyle.normal,
-                        fontSize: 18,
-                        color: Color(0xffffffff),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, MyRoutes.articleRoute);
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      margin: const EdgeInsets.all(0),
+                      padding: const EdgeInsets.all(0),
+                      width: MediaQuery.of(context).size.width,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 8, 152, 83),
+                        shape: BoxShape.rectangle,
+                        borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(12.0),
+                            bottomRight: Radius.circular(12.0)),
+                        border: Border.all(
+                            color: const Color(0x4d9e9e9e), width: 1),
+                      ),
+                      child: const Text(
+                        "Read this Article",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 18,
+                          color: Color(0xffffffff),
+                        ),
                       ),
                     ),
                   ),
@@ -122,7 +215,7 @@ class ElectionUpdates extends StatelessWidget {
             child: Card(
               margin: const EdgeInsets.all(4),
               // color: Colors.white,
-              color: Color.fromARGB(255, 255, 197, 121),
+              color: const Color.fromARGB(255, 255, 197, 121),
               shadowColor: const Color(0xff000000),
               elevation: 4,
               shape: RoundedRectangleBorder(
@@ -167,30 +260,35 @@ class ElectionUpdates extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Container(
-                    alignment: Alignment.center,
-                    margin: const EdgeInsets.all(0),
-                    padding: const EdgeInsets.all(0),
-                    width: MediaQuery.of(context).size.width,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 8, 152, 83),
-                      shape: BoxShape.rectangle,
-                      borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(12.0),
-                          bottomRight: Radius.circular(12.0)),
-                      border:
-                          Border.all(color: const Color(0x4d9e9e9e), width: 1),
-                    ),
-                    child: const Text(
-                      "Read this Article",
-                      textAlign: TextAlign.start,
-                      overflow: TextOverflow.clip,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontStyle: FontStyle.normal,
-                        fontSize: 18,
-                        color: Color(0xffffffff),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, MyRoutes.articleRoute);
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      margin: const EdgeInsets.all(0),
+                      padding: const EdgeInsets.all(0),
+                      width: MediaQuery.of(context).size.width,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 8, 152, 83),
+                        shape: BoxShape.rectangle,
+                        borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(12.0),
+                            bottomRight: Radius.circular(12.0)),
+                        border: Border.all(
+                            color: const Color(0x4d9e9e9e), width: 1),
+                      ),
+                      child: const Text(
+                        "Read this Article",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 18,
+                          color: Color(0xffffffff),
+                        ),
                       ),
                     ),
                   ),
@@ -203,7 +301,7 @@ class ElectionUpdates extends StatelessWidget {
             child: Card(
               margin: const EdgeInsets.all(4),
               // color: Colors.white,
-              color: Color.fromARGB(255, 255, 197, 121),
+              color: const Color.fromARGB(255, 255, 197, 121),
               shadowColor: const Color(0xff000000),
               elevation: 4,
               shape: RoundedRectangleBorder(
@@ -248,30 +346,35 @@ class ElectionUpdates extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Container(
-                    alignment: Alignment.center,
-                    margin: const EdgeInsets.all(0),
-                    padding: const EdgeInsets.all(0),
-                    width: MediaQuery.of(context).size.width,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 8, 152, 83),
-                      shape: BoxShape.rectangle,
-                      borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(12.0),
-                          bottomRight: Radius.circular(12.0)),
-                      border:
-                          Border.all(color: const Color(0x4d9e9e9e), width: 1),
-                    ),
-                    child: const Text(
-                      "Read this Article",
-                      textAlign: TextAlign.start,
-                      overflow: TextOverflow.clip,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontStyle: FontStyle.normal,
-                        fontSize: 18,
-                        color: Color(0xffffffff),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, MyRoutes.articleRoute);
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      margin: const EdgeInsets.all(0),
+                      padding: const EdgeInsets.all(0),
+                      width: MediaQuery.of(context).size.width,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 8, 152, 83),
+                        shape: BoxShape.rectangle,
+                        borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(12.0),
+                            bottomRight: Radius.circular(12.0)),
+                        border: Border.all(
+                            color: const Color(0x4d9e9e9e), width: 1),
+                      ),
+                      child: const Text(
+                        "Read this Article",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 18,
+                          color: Color(0xffffffff),
+                        ),
                       ),
                     ),
                   ),

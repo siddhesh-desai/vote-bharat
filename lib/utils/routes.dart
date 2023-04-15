@@ -9,4 +9,11 @@ class MyRoutes {
   static String electionUpdates = "/electionupdates";
   static String myProfile = "/myprofile";
   static String voterEducation = "/votereducation";
+  static String referalRoute = "/referal";
+  static String socialNetworkRoute = "/socialnetwork";
+  static String candidatesRoute = "/candidates";
+  static String articleRoute = "/article";
+  static String leaderboardRoute = "/leaderboard";
+  static String electionDayRoute = "/electionday";
+  static String videoScreenRoute = "/videoscreen";
 }

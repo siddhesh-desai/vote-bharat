@@ -72,10 +72,10 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           ListTile(
             onTap: () {
-              setState(() {
-                MyApp.sectionNow = 2;
-              });
-              // Navigator.pushNamed(context, MyRoutes.profileRoute);
+              // setState(() {
+              //   MyApp.sectionNow = 2;
+              // });
+              Navigator.pushNamed(context, MyRoutes.socialNetworkRoute);
             },
             leading: const Icon(
               Icons.people_alt,
@@ -110,6 +110,7 @@ class _MyDrawerState extends State<MyDrawer> {
           ListTile(
             onTap: () {
               // Navigator.pushNamed(context, MyRoutes.profileRoute);
+              Navigator.pushNamed(context, MyRoutes.voterEducation);
             },
             leading: const Icon(
               Icons.cast_for_education,
@@ -126,7 +127,7 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           ListTile(
             onTap: () {
-              // Navigator.pushNamed(context, MyRoutes.profileRoute);
+              Navigator.pushNamed(context, MyRoutes.leaderboardRoute);
             },
             leading: const Icon(
               Icons.leaderboard,
@@ -143,7 +144,7 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           ListTile(
             onTap: () {
-              // Navigator.pushNamed(context, MyRoutes.profileRoute);
+              Navigator.pushNamed(context, MyRoutes.referalRoute);
             },
             leading: const Icon(
               Icons.celebration,

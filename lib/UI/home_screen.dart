@@ -38,13 +38,14 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         actions: <Widget>[
           IconButton(
-            icon: const Icon(Icons.notifications_rounded),
-            tooltip: 'Setting Icon',
-            onPressed: () {},
-          ),
+              icon: const Icon(Icons.notifications_rounded),
+              tooltip: 'Notifications',
+              onPressed: () {
+                Navigator.pushNamed(context, MyRoutes.electionUpdates);
+              }),
           IconButton(
             icon: const Icon(Icons.person_pin),
-            tooltip: 'Setting Icon',
+            tooltip: 'My Profile',
             onPressed: () {
               Navigator.pushNamed(context, MyRoutes.myProfile);
             },
@@ -202,18 +203,23 @@ class _HomeScreenState extends State<HomeScreen> {
                 shrinkWrap: true,
                 physics: const ClampingScrollPhysics(),
                 children: [
-                  Container(
-                    margin: const EdgeInsets.fromLTRB(16, 0, 0, 0),
-                    padding: const EdgeInsets.all(8),
-                    width: 250,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      image: const DecorationImage(
-                          image: AssetImage('assets/images/banner01.jpg'),
-                          fit: BoxFit.cover),
-                      // color: Color(0xd854256f),
-                      shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(16.0),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, MyRoutes.electionUpdates);
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.fromLTRB(16, 0, 0, 0),
+                      padding: const EdgeInsets.all(8),
+                      width: 250,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        image: const DecorationImage(
+                            image: AssetImage('assets/images/banner01.jpg'),
+                            fit: BoxFit.cover),
+                        // color: Color(0xd854256f),
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(16.0),
+                      ),
                     ),
                   ),
                   Container(
@@ -223,25 +229,32 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 100,
                     decoration: BoxDecoration(
                       image: const DecorationImage(
-                          image: AssetImage('assets/images/banner01.jpg'),
+                          image: NetworkImage(
+                              "https://i.postimg.cc/ydJq53PT/Poster3.png"),
                           fit: BoxFit.cover),
                       // color: Color(0xd854256f),
                       shape: BoxShape.rectangle,
                       borderRadius: BorderRadius.circular(16.0),
                     ),
                   ),
-                  Container(
-                    margin: const EdgeInsets.fromLTRB(16, 0, 16, 0),
-                    padding: const EdgeInsets.all(8),
-                    width: 250,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      image: const DecorationImage(
-                          image: AssetImage('assets/images/banner01.jpg'),
-                          fit: BoxFit.cover),
-                      // color: Color(0xd854256f),
-                      shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(16.0),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, MyRoutes.socialNetworkRoute);
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+                      padding: const EdgeInsets.all(8),
+                      width: 250,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        image: const DecorationImage(
+                            image: NetworkImage(
+                                "https://i.postimg.cc/yxf6NJPX/Devraj-Babar-3.png"),
+                            fit: BoxFit.cover),
+                        // color: Color(0xd854256f),
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(16.0),
+                      ),
                     ),
                   ),
                 ],
@@ -273,42 +286,47 @@ class _HomeScreenState extends State<HomeScreen> {
                 childAspectRatio: 1,
               ),
               children: [
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(16.0),
-                      child: Image(
-                        image: const NetworkImage(
-                            "https://www.boell.de/sites/default/files/styles/var_larger/public/uploads/2014/04/indien-wahlen-aussenpolitik_0.jpg?itok=99bSUsQJ"),
-                        height: MediaQuery.of(context).size.height,
-                        width: MediaQuery.of(context).size.width,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(0),
-                      padding: const EdgeInsets.all(0),
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height,
-                      decoration: BoxDecoration(
-                        color: const Color(0x6e000000),
-                        shape: BoxShape.rectangle,
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, MyRoutes.socialNetworkRoute);
+                  },
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      ClipRRect(
                         borderRadius: BorderRadius.circular(16.0),
+                        child: Image(
+                          image: const NetworkImage(
+                              "https://www.boell.de/sites/default/files/styles/var_larger/public/uploads/2014/04/indien-wahlen-aussenpolitik_0.jpg?itok=99bSUsQJ"),
+                          height: MediaQuery.of(context).size.height,
+                          width: MediaQuery.of(context).size.width,
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ),
-                    const Text(
-                      "Social Network",
-                      textAlign: TextAlign.start,
-                      overflow: TextOverflow.clip,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontStyle: FontStyle.normal,
-                        fontSize: 18,
-                        color: Color(0xffffffff),
+                      Container(
+                        margin: const EdgeInsets.all(0),
+                        padding: const EdgeInsets.all(0),
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height,
+                        decoration: BoxDecoration(
+                          color: const Color(0x6e000000),
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
                       ),
-                    ),
-                  ],
+                      const Text(
+                        "Social Network",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 18,
+                          color: Color(0xffffffff),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 InkWell(
                   onTap: () {
@@ -353,156 +371,173 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(16.0),
-                      child:
-
-                          ///***If you have exported images you must have to copy those images in assets/images directory.
-                          Image(
-                        image: const NetworkImage(
-                            "https://th.bing.com/th/id/OIP.qWGveec8M82rItJpxVKuXwAAAA?pid=ImgDet&rs=1"),
-                        height: MediaQuery.of(context).size.height,
-                        width: MediaQuery.of(context).size.width,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(0),
-                      padding: const EdgeInsets.all(0),
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height,
-                      decoration: BoxDecoration(
-                        color: const Color(0x6e000000),
-                        shape: BoxShape.rectangle,
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, MyRoutes.voterEducation);
+                  },
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      ClipRRect(
                         borderRadius: BorderRadius.circular(16.0),
+                        child: Image(
+                          image: const NetworkImage(
+                              "https://th.bing.com/th/id/OIP.qWGveec8M82rItJpxVKuXwAAAA?pid=ImgDet&rs=1"),
+                          height: MediaQuery.of(context).size.height,
+                          width: MediaQuery.of(context).size.width,
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ),
-                    const Text(
-                      "Education",
-                      textAlign: TextAlign.start,
-                      overflow: TextOverflow.clip,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontStyle: FontStyle.normal,
-                        fontSize: 16,
-                        color: Color(0xffffffff),
+                      Container(
+                        margin: const EdgeInsets.all(0),
+                        padding: const EdgeInsets.all(0),
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height,
+                        decoration: BoxDecoration(
+                          color: const Color(0x6e000000),
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
                       ),
-                    ),
-                  ],
+                      const Text(
+                        "Education",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 16,
+                          color: Color(0xffffffff),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(16.0),
-                      child: Image(
-                        image: const NetworkImage(
-                            "https://media.istockphoto.com/photos/golden-trophy-with-blue-sky-background-with-copy-space-as-winner-or-picture-id803885084?k=6&m=803885084&s=612x612&w=0&h=RTCsfd1FU8ou2PmREbJpTVcBS1Ef1iSsbjTCyBe0M0w="),
-                        height: MediaQuery.of(context).size.height,
-                        width: MediaQuery.of(context).size.width,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(0),
-                      padding: const EdgeInsets.all(0),
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height,
-                      decoration: BoxDecoration(
-                        color: const Color(0x6e000000),
-                        shape: BoxShape.rectangle,
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, MyRoutes.leaderboardRoute);
+                  },
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      ClipRRect(
                         borderRadius: BorderRadius.circular(16.0),
+                        child: Image(
+                          image: const NetworkImage(
+                              "https://media.istockphoto.com/photos/golden-trophy-with-blue-sky-background-with-copy-space-as-winner-or-picture-id803885084?k=6&m=803885084&s=612x612&w=0&h=RTCsfd1FU8ou2PmREbJpTVcBS1Ef1iSsbjTCyBe0M0w="),
+                          height: MediaQuery.of(context).size.height,
+                          width: MediaQuery.of(context).size.width,
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ),
-                    const Text(
-                      "Leaderboard",
-                      textAlign: TextAlign.start,
-                      overflow: TextOverflow.clip,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontStyle: FontStyle.normal,
-                        fontSize: 16,
-                        color: Color(0xffffffff),
+                      Container(
+                        margin: const EdgeInsets.all(0),
+                        padding: const EdgeInsets.all(0),
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height,
+                        decoration: BoxDecoration(
+                          color: const Color(0x6e000000),
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
                       ),
-                    ),
-                  ],
+                      const Text(
+                        "Leaderboard",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 16,
+                          color: Color(0xffffffff),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(16.0),
-                      child: Image(
-                        image: const NetworkImage(
-                            "https://www.pngall.com/wp-content/uploads/2016/04/Coins-PNG.png"),
-                        height: MediaQuery.of(context).size.height,
-                        width: MediaQuery.of(context).size.width,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(0),
-                      padding: const EdgeInsets.all(0),
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height,
-                      decoration: BoxDecoration(
-                        color: const Color(0x6e000000),
-                        shape: BoxShape.rectangle,
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, MyRoutes.referalRoute);
+                  },
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      ClipRRect(
                         borderRadius: BorderRadius.circular(16.0),
+                        child: Image(
+                          image: const NetworkImage(
+                              "https://www.pngall.com/wp-content/uploads/2016/04/Coins-PNG.png"),
+                          height: MediaQuery.of(context).size.height,
+                          width: MediaQuery.of(context).size.width,
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ),
-                    const Text(
-                      "Rewards",
-                      textAlign: TextAlign.start,
-                      overflow: TextOverflow.clip,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontStyle: FontStyle.normal,
-                        fontSize: 16,
-                        color: Color(0xffffffff),
+                      Container(
+                        margin: const EdgeInsets.all(0),
+                        padding: const EdgeInsets.all(0),
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height,
+                        decoration: BoxDecoration(
+                          color: const Color(0x6e000000),
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
                       ),
-                    ),
-                  ],
+                      const Text(
+                        "Rewards",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 16,
+                          color: Color(0xffffffff),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(16.0),
-                      child: Image(
-                        image: const NetworkImage(
-                            "https://images.livemint.com/img/2020/08/22/600x338/b4a7e364-e3bd-11ea-8bff-6706f195ca7a_1598058291151_1598060234694.jpg"),
-                        height: MediaQuery.of(context).size.height,
-                        width: MediaQuery.of(context).size.width,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(0),
-                      padding: const EdgeInsets.all(0),
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height,
-                      decoration: BoxDecoration(
-                        color: const Color(0x6e000000),
-                        shape: BoxShape.rectangle,
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, MyRoutes.electionDayRoute);
+                  },
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      ClipRRect(
                         borderRadius: BorderRadius.circular(16.0),
+                        child: Image(
+                          image: const NetworkImage(
+                              "https://images.livemint.com/img/2020/08/22/600x338/b4a7e364-e3bd-11ea-8bff-6706f195ca7a_1598058291151_1598060234694.jpg"),
+                          height: MediaQuery.of(context).size.height,
+                          width: MediaQuery.of(context).size.width,
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ),
-                    const Text(
-                      "Election Day",
-                      textAlign: TextAlign.start,
-                      overflow: TextOverflow.clip,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontStyle: FontStyle.normal,
-                        fontSize: 18,
-                        color: Color(0xffffffff),
+                      Container(
+                        margin: const EdgeInsets.all(0),
+                        padding: const EdgeInsets.all(0),
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height,
+                        decoration: BoxDecoration(
+                          color: const Color(0x6e000000),
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
                       ),
-                    ),
-                  ],
+                      const Text(
+                        "Election Day",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 18,
+                          color: Color(0xffffffff),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
@@ -530,18 +565,23 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            Container(
-              margin: const EdgeInsets.fromLTRB(16, 0, 0, 20),
-              padding: const EdgeInsets.all(8),
-              width: 330,
-              height: 150,
-              decoration: BoxDecoration(
-                image: const DecorationImage(
-                  image: AssetImage('assets/images/refer_banner.png'),
-                  fit: BoxFit.cover,
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, MyRoutes.referalRoute);
+              },
+              child: Container(
+                margin: const EdgeInsets.fromLTRB(16, 0, 0, 20),
+                padding: const EdgeInsets.all(8),
+                width: 330,
+                height: 150,
+                decoration: BoxDecoration(
+                  image: const DecorationImage(
+                    image: AssetImage('assets/images/refer_banner.png'),
+                    fit: BoxFit.cover,
+                  ),
+                  shape: BoxShape.rectangle,
+                  borderRadius: BorderRadius.circular(16.0),
                 ),
-                shape: BoxShape.rectangle,
-                borderRadius: BorderRadius.circular(16.0),
               ),
             ),
           ],

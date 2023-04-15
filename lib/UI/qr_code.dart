@@ -222,23 +222,18 @@ class _MyProfileState extends State<MyProfile> {
                     showDialog(
                       context: context,
                       builder: (ctx) => AlertDialog(
-                        title: const Text("Your QR Code"),
-                        content: Image.network(
-                            "https://th.bing.com/th/id/R.fbd3782b74b283e3a06c44fc7600f0a8?rik=2WUTK7aTKMXbyA&riu=http%3a%2f%2fpngimg.com%2fuploads%2fqr_code%2fqr_code_PNG6.png&ehk=nUlk4YKcz%2fILTzIDicRXimAOjkyFKx9ofIkscb3FFxA%3d&risl=&pid=ImgRaw&r=0"),
+                        title: const Text("Alert Dialog Box"),
+                        content:
+                            const Text("You have raised a Alert Dialog Box"),
                         actions: <Widget>[
                           TextButton(
                             onPressed: () {
                               Navigator.of(ctx).pop();
                             },
                             child: Container(
-                              color: Color(0xffea6e17),
+                              color: Colors.green,
                               padding: const EdgeInsets.all(14),
-                              child: const Text(
-                                " Go Back",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
-                              ),
+                              child: const Text("okay"),
                             ),
                           ),
                         ],

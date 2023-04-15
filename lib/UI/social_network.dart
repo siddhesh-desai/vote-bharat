@@ -3,10 +3,16 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:vote_bharat/utils/routes.dart';
 
-class SocialMedia extends StatelessWidget {
+class SocialMedia extends StatefulWidget {
   const SocialMedia({Key? key}) : super(key: key);
 
+  @override
+  State<SocialMedia> createState() => _SocialMediaState();
+}
+
+class _SocialMediaState extends State<SocialMedia> {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -83,12 +89,14 @@ class _HomeState extends State<Home> {
 
   bool showBtmAppBr = true;
 
+  //Header Images
   List<String> images = [
-    "https://pbs.twimg.com/media/FgP1VubUoAAk7-R.jpg",
-    "https://pbs.twimg.com/media/FgaHwhMVUAILFNj.png",
-    "https://pbs.twimg.com/media/FgP1VubUoAAk7-R.jpg",
-    "https://pbs.twimg.com/media/FgaHwhMVUAILFNj.png",
-    "https://pbs.twimg.com/media/FgP1VubUoAAk7-R.jpg",
+    "https://i.postimg.cc/CLhBqFL4/Devraj-Babar-2.png",
+    "https://i.postimg.cc/yxf6NJPX/Devraj-Babar-3.png",
+    "https://i.postimg.cc/ydJq53PT/Poster3.png",
+    // "https://pbs.twimg.com/media/FgP1VubUoAAk7-R.jpg",
+    // "https://pbs.twimg.com/media/FgaHwhMVUAILFNj.png",
+    // "https://pbs.twimg.com/media/FgP1VubUoAAk7-R.jpg",
   ];
 
   @override
@@ -113,7 +121,7 @@ class _HomeState extends State<Home> {
             icon: const Icon(Icons.arrow_back),
             tooltip: 'Menu Icon',
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.pushReplacementNamed(context, MyRoutes.homeRoute);
             }),
       ),
       body: SafeArea(
@@ -131,7 +139,7 @@ class _HomeState extends State<Home> {
                       Radius.circular(16.0),
                     ),
                   ),
-                  selectedTileColor: Color.fromRGBO(235, 152, 78, 1),
+                  selectedTileColor: const Color.fromRGBO(235, 152, 78, 1),
                   title: Text(
                     "Let's Celebrate together!",
                     style: Theme.of(context).textTheme.subtitle1!.merge(
@@ -199,7 +207,7 @@ class _HomeState extends State<Home> {
                       ),
                     );
                   },
-                  itemCount: 5,
+                  itemCount: 3,
                 ),
               ),
               const SizedBox(
@@ -208,7 +216,7 @@ class _HomeState extends State<Home> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: List.generate(
-                  5,
+                  3,
                   (index) => GestureDetector(
                     child: Container(
                       margin: const EdgeInsets.all(2.0),
@@ -237,7 +245,7 @@ class _HomeState extends State<Home> {
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(bottom: 8),
         child: FloatingActionButton(
-          backgroundColor: Color.fromRGBO(40, 180, 99, 1),
+          backgroundColor: const Color.fromRGBO(40, 180, 99, 1),
           onPressed: () {},
           child: const Icon(
             Icons.add,
@@ -305,14 +313,38 @@ class GridB extends StatefulWidget {
 
 class _GridBState extends State<GridB> {
   final List<Map<String, dynamic>> gridMap = [
-    {"images": "https://pbs.twimg.com/media/FjWo93fVsAAPNYZ.jpg"},
-    {"images": "https://pbs.twimg.com/media/FgZmnXZWAAE3oBX.png"},
-    {"images": "https://pbs.twimg.com/media/FkOFKrxXEAAq991.jpg"},
-    {"images": "https://pbs.twimg.com/media/FjYAoHEXgAMUIQX.jpg"},
-    {"images": "https://pbs.twimg.com/media/FgQ3s7TWIAEOMM_.jpg"},
-    {"images": "https://pbs.twimg.com/media/FgQ3s7TWIAEOMM_.jpg"},
-    {"images": "https://pbs.twimg.com/media/FgT7Ht0XwAEXTTX.png"},
-    {"images": "https://pbs.twimg.com/media/FgYcamvXoAA0R1l.jpg"}
+    {
+      "images":
+          "https://static-koimoi.akamaized.net/wp-content/new-galleries/2014/04/celebs-who-voted-02.jpg"
+    },
+    {
+      "images":
+          "https://th.bing.com/th/id/R.07a8e48ccc7b8ac261c4ffa3e9c0e1ef?rik=H3azdlYmaHKRFA&riu=http%3a%2f%2fmedia2.intoday.in%2findiatoday%2fimages%2fPhoto_gallery%2fnaresh-prabhdesai_041014120144.jpg&ehk=HFXKjfcw8nl2QVHirLXMGH4KqWBeLsWxTVfTRWb1GMY%3d&risl=&pid=ImgRaw&r=0"
+    },
+    {
+      "images":
+          "https://images.livemint.com/img/2019/05/02/600x338/AFP_1G09DX_1556800188679_1556800199200.jpg"
+    },
+    {
+      "images":
+          "https://th.bing.com/th/id/OIP.FMRaOK8NcLbe6h0EyKs5ywHaJ4?pid=ImgDet&rs=1"
+    },
+    {
+      "images":
+          "https://th.bing.com/th/id/OIP.FMRaOK8NcLbe6h0EyKs5ywHaJ4?pid=ImgDet&rs=1"
+    },
+    {
+      "images":
+          "https://static-koimoi.akamaized.net/wp-content/new-galleries/2014/04/celebs-who-voted-05.jpg"
+    },
+    {
+      "images":
+          "https://static-koimoi.akamaized.net/wp-content/new-galleries/2014/04/celebs-who-voted-06.jpg"
+    },
+    {
+      "images":
+          "https://th.bing.com/th/id/R.036a481a7cb94823bf6a5722ebb36e07?rik=XgbtnjD4f5QHAA&riu=http%3a%2f%2fmedia2.intoday.in%2findiatoday%2fimages%2fPhoto_gallery%2fjayraj_neelegar_041714030601.jpg&ehk=MYqKKjPiqhAsb6eAo9yKxJY3Nq3qeiU0TzrfPc%2b7cYU%3d&risl=&pid=ImgRaw&r=0"
+    }
   ];
 
   @override

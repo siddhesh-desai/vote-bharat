@@ -174,30 +174,35 @@ class ElectionUpdates extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Container(
-                    alignment: Alignment.center,
-                    margin: const EdgeInsets.all(0),
-                    padding: const EdgeInsets.all(0),
-                    width: MediaQuery.of(context).size.width,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 8, 152, 83),
-                      shape: BoxShape.rectangle,
-                      borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(12.0),
-                          bottomRight: Radius.circular(12.0)),
-                      border:
-                          Border.all(color: const Color(0x4d9e9e9e), width: 1),
-                    ),
-                    child: const Text(
-                      "Read this Article",
-                      textAlign: TextAlign.start,
-                      overflow: TextOverflow.clip,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontStyle: FontStyle.normal,
-                        fontSize: 18,
-                        color: Color(0xffffffff),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, MyRoutes.articleRoute);
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      margin: const EdgeInsets.all(0),
+                      padding: const EdgeInsets.all(0),
+                      width: MediaQuery.of(context).size.width,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 8, 152, 83),
+                        shape: BoxShape.rectangle,
+                        borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(12.0),
+                            bottomRight: Radius.circular(12.0)),
+                        border: Border.all(
+                            color: const Color(0x4d9e9e9e), width: 1),
+                      ),
+                      child: const Text(
+                        "Read this Article",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 18,
+                          color: Color(0xffffffff),
+                        ),
                       ),
                     ),
                   ),
@@ -255,30 +260,35 @@ class ElectionUpdates extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Container(
-                    alignment: Alignment.center,
-                    margin: const EdgeInsets.all(0),
-                    padding: const EdgeInsets.all(0),
-                    width: MediaQuery.of(context).size.width,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 8, 152, 83),
-                      shape: BoxShape.rectangle,
-                      borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(12.0),
-                          bottomRight: Radius.circular(12.0)),
-                      border:
-                          Border.all(color: const Color(0x4d9e9e9e), width: 1),
-                    ),
-                    child: const Text(
-                      "Read this Article",
-                      textAlign: TextAlign.start,
-                      overflow: TextOverflow.clip,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontStyle: FontStyle.normal,
-                        fontSize: 18,
-                        color: Color(0xffffffff),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, MyRoutes.articleRoute);
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      margin: const EdgeInsets.all(0),
+                      padding: const EdgeInsets.all(0),
+                      width: MediaQuery.of(context).size.width,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 8, 152, 83),
+                        shape: BoxShape.rectangle,
+                        borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(12.0),
+                            bottomRight: Radius.circular(12.0)),
+                        border: Border.all(
+                            color: const Color(0x4d9e9e9e), width: 1),
+                      ),
+                      child: const Text(
+                        "Read this Article",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 18,
+                          color: Color(0xffffffff),
+                        ),
                       ),
                     ),
                   ),
@@ -336,30 +346,35 @@ class ElectionUpdates extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Container(
-                    alignment: Alignment.center,
-                    margin: const EdgeInsets.all(0),
-                    padding: const EdgeInsets.all(0),
-                    width: MediaQuery.of(context).size.width,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 8, 152, 83),
-                      shape: BoxShape.rectangle,
-                      borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(12.0),
-                          bottomRight: Radius.circular(12.0)),
-                      border:
-                          Border.all(color: const Color(0x4d9e9e9e), width: 1),
-                    ),
-                    child: const Text(
-                      "Read this Article",
-                      textAlign: TextAlign.start,
-                      overflow: TextOverflow.clip,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontStyle: FontStyle.normal,
-                        fontSize: 18,
-                        color: Color(0xffffffff),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, MyRoutes.articleRoute);
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      margin: const EdgeInsets.all(0),
+                      padding: const EdgeInsets.all(0),
+                      width: MediaQuery.of(context).size.width,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 8, 152, 83),
+                        shape: BoxShape.rectangle,
+                        borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(12.0),
+                            bottomRight: Radius.circular(12.0)),
+                        border: Border.all(
+                            color: const Color(0x4d9e9e9e), width: 1),
+                      ),
+                      child: const Text(
+                        "Read this Article",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 18,
+                          color: Color(0xffffffff),
+                        ),
                       ),
                     ),
                   ),

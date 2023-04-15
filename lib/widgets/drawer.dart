@@ -127,7 +127,7 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           ListTile(
             onTap: () {
-              // Navigator.pushNamed(context, MyRoutes.profileRoute);
+              Navigator.pushNamed(context, MyRoutes.leaderboardRoute);
             },
             leading: const Icon(
               Icons.leaderboard,
@@ -144,7 +144,7 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           ListTile(
             onTap: () {
-              // Navigator.pushNamed(context, MyRoutes.profileRoute);
+              Navigator.pushNamed(context, MyRoutes.referalRoute);
             },
             leading: const Icon(
               Icons.celebration,

@@ -39,6 +39,8 @@ dependencies:
   firebase_core: ^2.9.0
   firebase_auth: ^4.2.9
   fluttertoast: ^8.2.1
+  fl_chart: ^0.62.0
+  youtube_player_flutter: ^8.1.2
 
 dev_dependencies:
   flutter_test:
@@ -76,6 +78,10 @@ flutter:
     - assets/images/facebook.png
     - assets/images/twitter.png
     - assets/images/instagram.png
+    - assets/images/gold-cup.png
+    - assets/images/silver-cup.png
+    - assets/images/bronze-cup.png
+    - assets/images/amitabh_bachchan.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

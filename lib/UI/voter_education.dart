@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utils/routes.dart';
+
 class VoterEducation extends StatelessWidget {
   const VoterEducation({super.key});
 
@@ -29,316 +31,295 @@ class VoterEducation extends StatelessWidget {
           color: Colors.white,
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
+      backgroundColor: const Color(0xffebebeb),
+      body: ListView(
+        scrollDirection: Axis.vertical,
+        padding: const EdgeInsets.all(8),
+        shrinkWrap: true,
+        physics: const ClampingScrollPhysics(),
         children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(18, 20, 0, 20),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Column(
-                children: const [
-                  Text(
-                    "Learn Courses and Earn Points!",
-                    textAlign: TextAlign.left,
-                    overflow: TextOverflow.clip,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w800,
-                      fontStyle: FontStyle.normal,
-                      fontSize: 20,
-                      color: Colors.black,
+          Card(
+            margin: EdgeInsets.all(8),
+            color: Color(0xffffffff),
+            shadowColor: Color(0xff000000),
+            elevation: 1,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12.0),
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const ClipRRect(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(12.0),
+                      bottomLeft: Radius.circular(12.0)),
+                  child: Image(
+                    image: NetworkImage(
+                        "https://i0.wp.com/www.opindia.com/wp-content/uploads/2018/05/BN-WG941_kimbel_GR_20171122153716.jpg?resize=696%2C454&ssl=1"),
+                    height: 200,
+                    width: 130,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(20, 8, 8, 8),
+                    child: Container(
+                      height: 180,
+                      width: double.infinity,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Text(
+                            "What is Democracy ?",
+                            textAlign: TextAlign.start,
+                            maxLines: 3,
+                            // overflow: TextOverflow.clip,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontStyle: FontStyle.normal,
+                              fontSize: 20,
+                              color: Color(0xff000000),
+                            ),
+                          ),
+                          ElevatedButton(
+                            child: Text(
+                              "Watch",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.orange,
+                              elevation: 0,
+                            ),
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                  context, MyRoutes.videoScreenRoute);
+                            },
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ],
-              ),
-            ),
-          ),
-          Container(
-            alignment: Alignment.center,
-            margin: const EdgeInsets.all(0),
-            padding: const EdgeInsets.all(5),
-            width: 330,
-            height: 130,
-            decoration: BoxDecoration(
-              color: const Color(0xff0EA029),
-              shape: BoxShape.rectangle,
-              borderRadius: BorderRadius.circular(12.0),
-              border: Border.all(color: const Color(0x4d9e9e9e), width: 1),
-              boxShadow: const [
-                BoxShadow(
-                  color: Colors.black26,
-                  blurRadius: 5,
-                  offset: Offset(0, 2),
                 ),
               ],
             ),
-            child: Card(
-              margin: const EdgeInsets.all(4.0),
-              color: const Color(0xff0EA029),
-              shadowColor: Colors.black54,
-              elevation: 0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12.0),
-                side: const BorderSide(
-                  color: Colors.black54,
-                  width: 1,
-                ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Row(
-                    children: [
-                      Container(
-                        height: 110,
-                        width: 130,
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
-                            image: NetworkImage(
-                                "https://plnami.blob.core.windows.net/media/2014/08/democracy.jpg"),
-                          ),
-                        ),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                        child: Text(
-                          "Democracy",
-                          textAlign: TextAlign.center,
-                          overflow: TextOverflow.clip,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontStyle: FontStyle.normal,
-                            fontSize: 18,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ],
+          ),
+          Card(
+            margin: EdgeInsets.all(8),
+            color: Color(0xffffffff),
+            shadowColor: Color(0xff000000),
+            elevation: 1,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12.0),
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const ClipRRect(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(12.0),
+                      bottomLeft: Radius.circular(12.0)),
+                  child: Image(
+                    image: NetworkImage(
+                        "https://i.postimg.cc/zGLbK3Cd/VOTER-ID.jpg"),
+                    height: 200,
+                    width: 130,
+                    fit: BoxFit.cover,
                   ),
                 ),
-              ),
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-            child: Align(
-              alignment: Alignment.center,
-            ),
-          ),
-          Container(
-            alignment: Alignment.center,
-            margin: const EdgeInsets.all(0),
-            padding: const EdgeInsets.all(5),
-            width: 330,
-            height: 130,
-            decoration: BoxDecoration(
-              color: const Color(0xff0EA029),
-              shape: BoxShape.rectangle,
-              borderRadius: BorderRadius.circular(12.0),
-              border: Border.all(color: const Color(0x4d9e9e9e), width: 1),
-              boxShadow: const [
-                BoxShadow(
-                  color: Colors.black26,
-                  blurRadius: 5,
-                  offset: Offset(0, 2),
+                Expanded(
+                  flex: 1,
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(20, 8, 8, 8),
+                    child: Container(
+                      height: 180,
+                      width: double.infinity,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Text(
+                            "Voter ID and its details",
+                            textAlign: TextAlign.start,
+                            maxLines: 3,
+                            // overflow: TextOverflow.clip,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontStyle: FontStyle.normal,
+                              fontSize: 20,
+                              color: Color(0xff000000),
+                            ),
+                          ),
+                          ElevatedButton(
+                            child: Text(
+                              "Watch",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.orange,
+                              elevation: 0,
+                            ),
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                  context, MyRoutes.videoScreenRoute);
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
-            child: Card(
-              margin: const EdgeInsets.all(4.0),
-              color: const Color(0xff0EA029),
-              shadowColor: Colors.black54,
-              elevation: 0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12.0),
-                side: const BorderSide(
-                  color: Colors.black54,
-                  width: 1,
-                ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Row(
-                    children: [
-                      Container(
-                        height: 110,
-                        width: 130,
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
-                            image: NetworkImage(
-                                "https://plnami.blob.core.windows.net/media/2014/08/democracy.jpg"),
-                          ),
-                        ),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                        child: Text(
-                          "EVMs",
-                          textAlign: TextAlign.center,
-                          overflow: TextOverflow.clip,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontStyle: FontStyle.normal,
-                            fontSize: 18,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ],
+          ),
+          Card(
+            margin: EdgeInsets.all(8),
+            color: Color(0xffffffff),
+            shadowColor: Color(0xff000000),
+            elevation: 1,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12.0),
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const ClipRRect(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(12.0),
+                      bottomLeft: Radius.circular(12.0)),
+                  child: Image(
+                    image: NetworkImage(
+                        "https://th.bing.com/th/id/OIP.eN-cbA64FXDswYoSTaaXwAHaE7?pid=ImgDet&rs=1"),
+                    height: 200,
+                    width: 130,
+                    fit: BoxFit.cover,
                   ),
                 ),
-              ),
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-            child: Align(
-              alignment: Alignment.center,
-            ),
-          ),
-          Container(
-            alignment: Alignment.center,
-            margin: const EdgeInsets.all(0),
-            padding: const EdgeInsets.all(5),
-            width: 330,
-            height: 130,
-            decoration: BoxDecoration(
-              color: const Color(0xff0EA029),
-              shape: BoxShape.rectangle,
-              borderRadius: BorderRadius.circular(12.0),
-              border: Border.all(color: const Color(0x4d9e9e9e), width: 1),
-              boxShadow: const [
-                BoxShadow(
-                  color: Colors.black26,
-                  blurRadius: 5,
-                  offset: Offset(0, 2),
+                Expanded(
+                  flex: 1,
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(20, 8, 8, 8),
+                    child: Container(
+                      height: 180,
+                      width: double.infinity,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Text(
+                            "Voting Day Routine",
+                            textAlign: TextAlign.start,
+                            maxLines: 3,
+                            // overflow: TextOverflow.clip,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontStyle: FontStyle.normal,
+                              fontSize: 20,
+                              color: Color(0xff000000),
+                            ),
+                          ),
+                          ElevatedButton(
+                            child: Text(
+                              "Watch",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.orange,
+                              elevation: 0,
+                            ),
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                  context, MyRoutes.videoScreenRoute);
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
-            child: Card(
-              margin: const EdgeInsets.all(4.0),
-              color: const Color(0xff0EA029),
-              shadowColor: Colors.black54,
-              elevation: 0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12.0),
-                side: const BorderSide(
-                  color: Colors.black54,
-                  width: 1,
-                ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Row(
-                    children: [
-                      Container(
-                        height: 110,
-                        width: 130,
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
-                            image: NetworkImage(
-                                "https://plnami.blob.core.windows.net/media/2014/08/democracy.jpg"),
-                          ),
-                        ),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                        child: Text(
-                          "Awareness",
-                          textAlign: TextAlign.center,
-                          overflow: TextOverflow.clip,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontStyle: FontStyle.normal,
-                            fontSize: 18,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ],
+          ),
+          Card(
+            margin: EdgeInsets.all(8),
+            color: Color(0xffffffff),
+            shadowColor: Color(0xff000000),
+            elevation: 1,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12.0),
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const ClipRRect(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(12.0),
+                      bottomLeft: Radius.circular(12.0)),
+                  child: Image(
+                    image: NetworkImage(
+                        "https://vajiramandravi.s3.us-east-1.amazonaws.com/media/2020/4/27/9/8/48/Rajya_sabha.jpg"),
+                    height: 200,
+                    width: 130,
+                    fit: BoxFit.cover,
                   ),
                 ),
-              ),
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-            child: Align(
-              alignment: Alignment.center,
-            ),
-          ),
-          Container(
-            alignment: Alignment.center,
-            margin: const EdgeInsets.all(0),
-            padding: const EdgeInsets.all(5),
-            width: 330,
-            height: 130,
-            decoration: BoxDecoration(
-              color: const Color(0xff0EA029),
-              shape: BoxShape.rectangle,
-              borderRadius: BorderRadius.circular(12.0),
-              border: Border.all(color: const Color(0x4d9e9e9e), width: 1),
-              boxShadow: const [
-                BoxShadow(
-                  color: Colors.black26,
-                  blurRadius: 5,
-                  offset: Offset(0, 2),
+                Expanded(
+                  flex: 1,
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(20, 8, 8, 8),
+                    child: Container(
+                      height: 180,
+                      width: double.infinity,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Text(
+                            "Lok Sabha and Rajya Sabha",
+                            textAlign: TextAlign.start,
+                            maxLines: 3,
+                            // overflow: TextOverflow.clip,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontStyle: FontStyle.normal,
+                              fontSize: 20,
+                              color: Color(0xff000000),
+                            ),
+                          ),
+                          ElevatedButton(
+                            child: Text(
+                              "Watch",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.orange,
+                              elevation: 0,
+                            ),
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                  context, MyRoutes.videoScreenRoute);
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
               ],
-            ),
-            child: Card(
-              margin: const EdgeInsets.all(4.0),
-              color: const Color(0xff0EA029),
-              shadowColor: Colors.black54,
-              elevation: 0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12.0),
-                side: const BorderSide(
-                  color: Colors.black54,
-                  width: 1,
-                ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Row(
-                    children: [
-                      Container(
-                        height: 110,
-                        width: 130,
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
-                            image: NetworkImage(
-                                "https://plnami.blob.core.windows.net/media/2014/08/democracy.jpg"),
-                          ),
-                        ),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                        child: Text(
-                          "Parliament",
-                          textAlign: TextAlign.center,
-                          overflow: TextOverflow.clip,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontStyle: FontStyle.normal,
-                            fontSize: 18,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
             ),
           ),
         ],

@@ -1,7 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:vote_bharat/main.dart';
 import 'package:vote_bharat/utils/routes.dart';
 import 'package:vote_bharat/widgets/drawer.dart';
+
+import '../widgets/utils.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,6 +15,38 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   var scaffoldKey = GlobalKey<ScaffoldState>();
+
+  bool linked = false;
+
+  @override
+  void initState() {
+    super.initState();
+    linkedNot();
+  }
+
+  Future<void> linkedNot() async {
+    try {
+      final docSnapshot = await FirebaseFirestore.instance
+          .collection('users')
+          .doc(MyApp.userId)
+          .get();
+      if (docSnapshot.exists) {
+        setState(() {
+          linked = docSnapshot.get(FieldPath(['linked']));
+          MyApp.voterID = docSnapshot.get(FieldPath(['voterID']));
+          MyApp.constituency = docSnapshot.get(FieldPath(['constituency']));
+          MyApp.referals = docSnapshot.get(FieldPath(['referals']));
+          MyApp.rewards = docSnapshot.get(FieldPath(['rewards']));
+          print(MyApp.constituency);
+        });
+      } else {
+        Utils().toastMsg('Error fetching from database');
+      }
+    } catch (e) {
+      print('Error - $e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -129,24 +164,38 @@ class _HomeScreenState extends State<HomeScreen> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisSize: MainAxisSize.max,
-                                  children: const [
-                                    Text(
-                                      "Voter ID not linked yet!",
-                                      textAlign: TextAlign.start,
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w600,
-                                        fontStyle: FontStyle.normal,
-                                        fontSize: 15,
-                                        color: Color(0xff000000),
-                                      ),
-                                    ),
+                                  children: [
+                                    !linked
+                                        ? Text(
+                                            "Voter ID not linked yet!",
+                                            textAlign: TextAlign.start,
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.w600,
+                                              fontStyle: FontStyle.normal,
+                                              fontSize: 15,
+                                              color: Color(0xff000000),
+                                            ),
+                                          )
+                                        : Text(
+                                            "Voter ID is linked",
+                                            textAlign: TextAlign.start,
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.w600,
+                                              fontStyle: FontStyle.normal,
+                                              fontSize: 15,
+                                              color: Color(0xff000000),
+                                            ),
+                                          )
                                   ],
                                 ),
                               ),
                               MaterialButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(
-                                      context, MyRoutes.linkVoterID);
+                                  (!linked)
+                                      ? Navigator.pushNamed(
+                                          context, MyRoutes.linkVoterID)
+                                      : Navigator.pushNamed(
+                                          context, MyRoutes.myProfile);
                                 },
                                 color: const Color.fromARGB(255, 77, 148, 88),
                                 elevation: 2,
@@ -155,14 +204,23 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 textColor: const Color(0xffffffff),
                                 height: 40,
-                                child: const Text(
-                                  "Link Now",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700,
-                                    fontStyle: FontStyle.normal,
-                                  ),
-                                ),
+                                child: !linked
+                                    ? Text(
+                                        "Link Now",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w700,
+                                          fontStyle: FontStyle.normal,
+                                        ),
+                                      )
+                                    : Text(
+                                        "View Profile",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w700,
+                                          fontStyle: FontStyle.normal,
+                                        ),
+                                      ),
                               ),
                             ],
                           ),

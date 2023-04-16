@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:vote_bharat/utils/routes.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SocialMedia extends StatefulWidget {
   const SocialMedia({Key? key}) : super(key: key);
@@ -246,13 +247,24 @@ class _HomeState extends State<Home> {
         padding: const EdgeInsets.only(bottom: 8),
         child: FloatingActionButton(
           backgroundColor: const Color.fromRGBO(40, 180, 99, 1),
-          onPressed: () {},
+          onPressed: _launchURL,
           child: const Icon(
             Icons.add,
           ),
         ),
       ),
     );
+  }
+}
+
+_launchURL() async {
+  const url =
+      'fb://inspirationscamera/?effectID=264541029236297&reason=web_link_redirect_button&cryptoHash=ODAzYTBmZWMxNmM1ZjNlY2FhYjI2ODIxZDI5ZmQ0MzQ%3D';
+  final uri = Uri.parse(url);
+  if (await canLaunchUrl(uri)) {
+    await launchUrl(uri);
+  } else {
+    throw 'Could not launch $url';
   }
 }
 

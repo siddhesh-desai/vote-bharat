@@ -1,9 +1,43 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
+import '../main.dart';
 import '../utils/routes.dart';
+import '../widgets/utils.dart';
 
-class ApplySuccessful extends StatelessWidget {
-  const ApplySuccessful({super.key});
+class ApplySuccessful extends StatefulWidget {
+  const ApplySuccessful({Key? key}) : super(key: key);
+
+  @override
+  _ApplySuccessfulState createState() => _ApplySuccessfulState();
+}
+
+class _ApplySuccessfulState extends State<ApplySuccessful> {
+  String status = "";
+
+  @override
+  void initState() {
+    super.initState();
+    _getById();
+  }
+
+  Future<void> _getById() async {
+    try {
+      final docSnapshot = await FirebaseFirestore.instance
+          .collection('users')
+          .doc(MyApp.userId)
+          .get();
+      if (docSnapshot.exists) {
+        setState(() {
+          status = docSnapshot.get(FieldPath(['status']));
+        });
+      } else {
+        Utils().toastMsg('Error fetching from database');
+      }
+    } catch (e) {
+      print('Error - $e');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,13 +91,13 @@ class ApplySuccessful extends StatelessWidget {
                   ),
                 ),
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
                 child: Text(
-                  "Status: Submitted",
+                  "Status: $status",
                   textAlign: TextAlign.start,
                   overflow: TextOverflow.clip,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
                     fontSize: 20,

@@ -33,6 +33,10 @@ class MyApp extends StatefulWidget {
   static String name = "";
 
   static String email = "";
+  static String voterID = "";
+  static String constituency = "";
+  static String rewards = "";
+  static String referals = "";
   static int sectionNow = 1;
 
   @override
@@ -54,9 +58,9 @@ class _MyAppState extends State<MyApp> {
         MyRoutes.registerRoute: (context) => const RegisterScreen(),
         MyRoutes.homeRoute: (context) => const HomeScreen(),
         MyRoutes.applyVoterID: (context) => const ApplyVoterID(),
-        MyRoutes.linkVoterID: (context) => const LinkVoterID(),
+        MyRoutes.linkVoterID: (context) => LinkVoterID(),
         MyRoutes.linkSuccess: (context) => const LinkSuccessful(),
-        MyRoutes.applySuccess: (context) => const ApplySuccessful(),
+        MyRoutes.applySuccess: (context) => ApplySuccessful(),
         MyRoutes.electionUpdates: (context) => const ElectionUpdates(),
         MyRoutes.myProfile: (context) => const MyProfile(),
         MyRoutes.voterEducation: (context) => const VoterEducation(),

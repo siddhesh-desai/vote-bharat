@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:qr_flutter/qr_flutter.dart';
+
+import '../main.dart';
 
 class MyProfile extends StatefulWidget {
   const MyProfile({super.key});
@@ -65,8 +68,8 @@ class _MyProfileState extends State<MyProfile> {
                   ),
                 ),
               ),
-              const Text(
-                "Sanket Disale",
+              Text(
+                "${MyApp.name}",
                 textAlign: TextAlign.start,
                 overflow: TextOverflow.clip,
                 style: TextStyle(
@@ -80,36 +83,60 @@ class _MyProfileState extends State<MyProfile> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
-                children: const [
+                children: [
                   Padding(
                     padding: EdgeInsets.fromLTRB(0, 8, 0, 0),
-                    child: Text(
-                      "Voter ID : SZH8390254",
-                      textAlign: TextAlign.center,
-                      overflow: TextOverflow.clip,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w800,
-                        fontStyle: FontStyle.normal,
-                        fontSize: 16,
-                        color: Color.fromARGB(255, 80, 80, 80),
-                      ),
-                    ),
+                    child: (MyApp.voterID == "")
+                        ? Text(
+                            "Voter ID not linked ",
+                            textAlign: TextAlign.center,
+                            overflow: TextOverflow.clip,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w800,
+                              fontStyle: FontStyle.normal,
+                              fontSize: 16,
+                              color: Color.fromARGB(255, 80, 80, 80),
+                            ),
+                          )
+                        : Text(
+                            "Voter ID : ${MyApp.voterID}",
+                            textAlign: TextAlign.center,
+                            overflow: TextOverflow.clip,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w800,
+                              fontStyle: FontStyle.normal,
+                              fontSize: 16,
+                              color: Color.fromARGB(255, 80, 80, 80),
+                            ),
+                          ),
                   ),
                 ],
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.fromLTRB(0, 4, 0, 0),
-                child: Text(
-                  "Constituency : Pandharpur - MAH",
-                  textAlign: TextAlign.center,
-                  overflow: TextOverflow.clip,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontStyle: FontStyle.normal,
-                    fontSize: 16,
-                    color: Color.fromARGB(255, 80, 80, 80),
-                  ),
-                ),
+                child: (MyApp.voterID == "")
+                    ? Text(
+                        "",
+                        textAlign: TextAlign.center,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 16,
+                          color: Color.fromARGB(255, 80, 80, 80),
+                        ),
+                      )
+                    : Text(
+                        "Constituency : ${MyApp.constituency}",
+                        textAlign: TextAlign.center,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 16,
+                          color: Color.fromARGB(255, 80, 80, 80),
+                        ),
+                      ),
               ),
               Container(
                 margin: const EdgeInsets.fromLTRB(8, 16, 8, 0),
@@ -133,9 +160,9 @@ class _MyProfileState extends State<MyProfile> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
-                          children: const [
+                          children: [
                             Text(
-                              "40 🧑",
+                              "${MyApp.referals} 🧑",
                               textAlign: TextAlign.start,
                               overflow: TextOverflow.clip,
                               style: TextStyle(
@@ -182,9 +209,9 @@ class _MyProfileState extends State<MyProfile> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
-                          children: const [
+                          children: [
                             Text(
-                              "100 🏆",
+                              "${MyApp.rewards} 🏆",
                               textAlign: TextAlign.start,
                               overflow: TextOverflow.clip,
                               style: TextStyle(
@@ -223,8 +250,13 @@ class _MyProfileState extends State<MyProfile> {
                       context: context,
                       builder: (ctx) => AlertDialog(
                         title: const Text("Your QR Code"),
-                        content: Image.network(
-                            "https://th.bing.com/th/id/R.fbd3782b74b283e3a06c44fc7600f0a8?rik=2WUTK7aTKMXbyA&riu=http%3a%2f%2fpngimg.com%2fuploads%2fqr_code%2fqr_code_PNG6.png&ehk=nUlk4YKcz%2fILTzIDicRXimAOjkyFKx9ofIkscb3FFxA%3d&risl=&pid=ImgRaw&r=0"),
+                        content: QrImage(
+                          data: MyApp.voterID,
+                          version: QrVersions.auto,
+                          size: 200.0,
+                        ),
+                        // content: Image.network(
+                        //     "https://th.bing.com/th/id/R.fbd3782b74b283e3a06c44fc7600f0a8?rik=2WUTK7aTKMXbyA&riu=http%3a%2f%2fpngimg.com%2fuploads%2fqr_code%2fqr_code_PNG6.png&ehk=nUlk4YKcz%2fILTzIDicRXimAOjkyFKx9ofIkscb3FFxA%3d&risl=&pid=ImgRaw&r=0"),
                         actions: <Widget>[
                           TextButton(
                             onPressed: () {

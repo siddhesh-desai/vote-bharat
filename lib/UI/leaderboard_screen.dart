@@ -119,7 +119,7 @@ class _LeaderBoardScreenState extends State<LeaderBoardScreen> {
                                         padding: const EdgeInsets.fromLTRB(
                                             0, 10, 0, 0),
                                         child: Text(
-                                          "Region Second\n50%",
+                                          "Pune\n50%",
                                           textAlign: TextAlign.center,
                                           // maxLines: 1,
                                           // overflow: TextOverflow.clip,
@@ -151,7 +151,7 @@ class _LeaderBoardScreenState extends State<LeaderBoardScreen> {
                                         padding: const EdgeInsets.fromLTRB(
                                             0, 10, 0, 0),
                                         child: Text(
-                                          "Region First\n75%",
+                                          "Kagal\n75%",
                                           textAlign: TextAlign.center,
                                           // maxLines: 1,
                                           // overflow: TextOverflow.clip,
@@ -184,7 +184,7 @@ class _LeaderBoardScreenState extends State<LeaderBoardScreen> {
                                         padding: const EdgeInsets.fromLTRB(
                                             0, 10, 0, 0),
                                         child: Text(
-                                          "Region Third\n48%",
+                                          "Nalanda\n48%",
                                           textAlign: TextAlign.center,
                                           // maxLines: 1,
                                           // overflow: TextOverflow.clip,
@@ -263,7 +263,7 @@ class _LeaderBoardScreenState extends State<LeaderBoardScreen> {
                                         padding: const EdgeInsets.fromLTRB(
                                             0, 10, 0, 0),
                                         child: Text(
-                                          "Region Second\n50%",
+                                          "Nagpur\n50%",
                                           textAlign: TextAlign.center,
                                           // maxLines: 1,
                                           // overflow: TextOverflow.clip,
@@ -295,7 +295,7 @@ class _LeaderBoardScreenState extends State<LeaderBoardScreen> {
                                         padding: const EdgeInsets.fromLTRB(
                                             0, 10, 0, 0),
                                         child: Text(
-                                          "Region First\n75%",
+                                          "Varanasi\n75%",
                                           textAlign: TextAlign.center,
                                           // maxLines: 1,
                                           // overflow: TextOverflow.clip,
@@ -328,7 +328,7 @@ class _LeaderBoardScreenState extends State<LeaderBoardScreen> {
                                         padding: const EdgeInsets.fromLTRB(
                                             0, 10, 0, 0),
                                         child: Text(
-                                          "Region Third\n48%",
+                                          "Andaman\n48%",
                                           textAlign: TextAlign.center,
                                           // maxLines: 1,
                                           // overflow: TextOverflow.clip,
@@ -408,7 +408,7 @@ class _LeaderBoardScreenState extends State<LeaderBoardScreen> {
                                         padding: const EdgeInsets.fromLTRB(
                                             0, 10, 0, 0),
                                         child: Text(
-                                          "Region Second\n50%",
+                                          "Banglore\n50%",
                                           textAlign: TextAlign.center,
                                           // maxLines: 1,
                                           // overflow: TextOverflow.clip,
@@ -440,7 +440,7 @@ class _LeaderBoardScreenState extends State<LeaderBoardScreen> {
                                         padding: const EdgeInsets.fromLTRB(
                                             0, 10, 0, 0),
                                         child: Text(
-                                          "Region First\n75%",
+                                          "Mumbai\n75%",
                                           textAlign: TextAlign.center,
                                           // maxLines: 1,
                                           // overflow: TextOverflow.clip,
@@ -473,7 +473,7 @@ class _LeaderBoardScreenState extends State<LeaderBoardScreen> {
                                         padding: const EdgeInsets.fromLTRB(
                                             0, 10, 0, 0),
                                         child: Text(
-                                          "Region Third\n48%",
+                                          "Jaipur\n48%",
                                           textAlign: TextAlign.center,
                                           // maxLines: 1,
                                           // overflow: TextOverflow.clip,
@@ -552,7 +552,7 @@ class _LeaderBoardScreenState extends State<LeaderBoardScreen> {
                                         padding: const EdgeInsets.fromLTRB(
                                             0, 10, 0, 0),
                                         child: Text(
-                                          "Region Second\n50%",
+                                          "Jhansi\n50%",
                                           textAlign: TextAlign.center,
                                           // maxLines: 1,
                                           // overflow: TextOverflow.clip,
@@ -584,7 +584,7 @@ class _LeaderBoardScreenState extends State<LeaderBoardScreen> {
                                         padding: const EdgeInsets.fromLTRB(
                                             0, 10, 0, 0),
                                         child: Text(
-                                          "Region First\n75%",
+                                          "Kolhapur\n75%",
                                           textAlign: TextAlign.center,
                                           // maxLines: 1,
                                           // overflow: TextOverflow.clip,
@@ -617,7 +617,7 @@ class _LeaderBoardScreenState extends State<LeaderBoardScreen> {
                                         padding: const EdgeInsets.fromLTRB(
                                             0, 10, 0, 0),
                                         child: Text(
-                                          "Region Third\n48%",
+                                          "Bikaner\n48%",
                                           textAlign: TextAlign.center,
                                           // maxLines: 1,
                                           // overflow: TextOverflow.clip,
